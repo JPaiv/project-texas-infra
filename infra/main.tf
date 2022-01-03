@@ -26,7 +26,6 @@ terraform {
 module "vpc" {
   source      = "./modules/vpc"
   region      = var.region
-  project_id  = var.project_id
   environment = var.environment
 }
 
