@@ -8,6 +8,6 @@ variable "project" {
   default = "project-texas"
 }
 
-variable "environemnt" {
+variable "environment" {
   type = string
 }

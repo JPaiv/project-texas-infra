@@ -34,6 +34,7 @@ module "gke" {
   source = "./modules/gke"
   region = var.region
   project_id = var.project_id
+  environment = var.environment
 
   depends_on = [module.vpc]
 }
