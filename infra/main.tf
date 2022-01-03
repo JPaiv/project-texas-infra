@@ -2,7 +2,6 @@ terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
-      version = "4.5.0"
     }
   }
   backend "gcs" {
@@ -12,14 +11,12 @@ terraform {
 }
 
 # provider "google" {
-#   version     = "4.5.0"
 #   credentials = "${file(var.credentials)}"
 #   project     = var.project_id
 #   region      = var.regionte
 # }
 
 provider "google-beta" {
-  version     = "4.5.0"
   credentials = "${file(var.credentials)}"
   project     = var.project_id
   region      = var.region
