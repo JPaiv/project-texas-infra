@@ -24,3 +24,10 @@ module "gke" {
   vpc_name    = module.vpc.vpc_id
   subnet_name = module.vpc.subnet_id
 }
+
+module "registry" {
+  source          = "./modules/registry"
+  region          = var.region
+  project_id      = var.project_id
+  service_account = var.service_account
+}

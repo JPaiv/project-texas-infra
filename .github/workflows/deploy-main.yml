@@ -7,6 +7,7 @@ on:
 
 env:
   TF_VAR_environment: test
+  TF_VAR_service_account: ${{ secrets.SERVICE_ACCOUNT }}
 
 jobs:
   terraform:
