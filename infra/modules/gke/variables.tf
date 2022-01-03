@@ -24,7 +24,7 @@ variable "gke_num_nodes" {
   default = 1
 }
 
-variable "project_itd" {
+variable "project_id" {
   type = string
   description = "Project id for GCP, get from CI/CD given environmen variables."
 }

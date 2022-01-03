@@ -1,10 +1,10 @@
 variable "region" {
-  type = string
+  type    = string
   default = "eu-central1"
 }
 
 variable "project" {
-  type = string
+  type    = string
   default = "project-texas"
 }
 
