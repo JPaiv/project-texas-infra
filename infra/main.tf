@@ -28,8 +28,6 @@ module "vpc" {
   region      = var.region
   project_id  = var.project_id
   environment = var.environment
-  vpc_name    = module.vpc.vpc.name
-  subnet_name = module.vpc.subnet.name
 }
 
 module "gke" {
@@ -37,6 +35,8 @@ module "gke" {
   region      = var.region
   project_id  = var.project_id
   environment = var.environment
+  vpc_name    = module.vpc.vpc.name
+  subnet_name = module.vpc.subnet.name
 
   depends_on = [module.vpc]
 }
