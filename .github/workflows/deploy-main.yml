@@ -2,12 +2,8 @@ name: "GKE infra Terraform deployment"
 
 on:
   push:
-    # paths:
-    # - 'gke_tf/**'
-    # - 'worker_nodes/**' 
     branches:
       - main
-  # pull_request:
 
 env:
   TF_VAR_environment: test
@@ -31,8 +27,8 @@ jobs:
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v0.4.0'
         with:
-          workload_identity_provider: 'projects/619493426109/locations/global/workloadIdentityPools/project-texas-pool/providers/project-texas-provider'
-          service_account: 'project-texas-account@project-texas.iam.gserviceaccount.com'
+          workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.SERVICE_ACCOUNT }}
 
       - name: 'Set up Cloud SDK'
         uses: 'google-github-actions/setup-gcloud@v0'
