@@ -24,14 +24,14 @@ terraform {
 # }
 
 module "vpc" {
-  source = ".modules/vpc"
+  source = "./modules/vpc"
   region = var.region
   project_id = var.project_id
   environment = var.environment
 }
 
 module "gke" {
-  source = ".modules/gke"
+  source = "./modules/gke"
   region = var.region
   project_id = var.project_id
 
