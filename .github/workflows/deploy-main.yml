@@ -25,13 +25,14 @@ jobs:
         uses: actions/checkout@v2
 
       - id: 'auth'
-        uses: 'google-github-actions/auth@v0'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v0.4.0'
         with:
-          workload_identity_provider: 'projects/619493426109/locations/global/workloadIdentityPools/project-texas-pool/'
+          workload_identity_provider: 'projects/619493426109/locations/global/workloadIdentityPools/project-texas-pool/providers/project-texas-provider'
           service_account: 'project-texas-account@project-texas.iam.gserviceaccount.com'
 
-      # - name: 'Set up Cloud SDK'
-      #   uses: 'google-github-actions/setup-gcloud@v0'
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v0'
 
       - name: 'Use gcloud CLI'
         run: 'gcloud info'
