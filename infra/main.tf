@@ -37,7 +37,7 @@ provider "google-beta" {
 #   depends_on = [module.vpc]
 # }
 resource "google_storage_bucket" "static-site" {
-  name          = "image-store.com-test"
+  name          = "image-store-com-test"
   location      = "EU"
   force_destroy = true
 }
