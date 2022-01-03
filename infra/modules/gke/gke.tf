@@ -16,7 +16,7 @@ resource "google_container_cluster" "primary_cluster" {
 resource "google_container_node_pool" "primary_node_pool" {
   name       = "${var.environment}-${google_container_cluster.primary_cluste.name}-node-pool"
   location   = var.region
-  cluster    = google_container_cluster.primary.name
+  cluster    = google_container_cluster.primary_cluster.name
   node_count = var.gke_num_nodes
 
   node_config {
