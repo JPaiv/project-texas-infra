@@ -9,6 +9,9 @@ on:
       - main
   # pull_request:
 
+env:
+  TF_VAR_environment: test
+
 jobs:
   terraform:
     name: "Terraform"
@@ -19,8 +22,6 @@ jobs:
     permissions:
       contents: 'read'
       id-token: 'write'
-    environment:
-      TF_VAR_environment: test
 
     steps:
       - name: Checkout
