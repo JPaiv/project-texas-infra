@@ -10,19 +10,6 @@ terraform {
   }
 }
 
-
-# provider "google" {
-#   credentials = "${file(var.credentials)}"
-#   project     = var.project_id
-#   region      = var.regionte
-# }
-
-# provider "google-beta" {
-#   credentials = "${file(var.credentials)}"
-#   project     = var.project_id
-#   region      = var.region
-# }
-
 module "vpc" {
   source      = "./modules/vpc"
   region      = var.region
@@ -34,8 +21,7 @@ module "gke" {
   region      = var.region
   project_id  = var.project_id
   environment = var.environment
-  vpc_name    = module.vpc_name
-  subnet_name = module.subnet_name
-
+  vpc_name    = module.vpc.vpc.id
+  subnet_name = module.vpc.subnet.id
   depends_on = [module.vpc]
 }
