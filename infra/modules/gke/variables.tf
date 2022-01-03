@@ -19,7 +19,7 @@ variable "region" {
 }
 
 variable "gke_num_nodes" {
-  type = integer
+  type = number
   description = "Number of default nodes on GKE cluster."
   default = 1
 }
