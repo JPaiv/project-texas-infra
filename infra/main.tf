@@ -34,8 +34,8 @@ module "gke" {
   region      = var.region
   project_id  = var.project_id
   environment = var.environment
-  vpc_name    = module.vpc.vpc.name
-  subnet_name = module.vpc.subnet.name
+  vpc_name    = module.vpc_name
+  subnet_name = module.subnet_name
 
   depends_on = [module.vpc]
 }

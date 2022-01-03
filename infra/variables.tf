@@ -3,7 +3,7 @@ variable "region" {
   default = "eu-central1"
 }
 
-variable "project" {
+variable "project_id" {
   type    = string
   default = "project-texas"
 }
