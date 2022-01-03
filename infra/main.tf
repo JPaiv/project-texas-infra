@@ -27,7 +27,6 @@ module "gke" {
 
 module "registry" {
   source          = "./modules/registry"
-  region          = var.region
   project_id      = var.project_id
   service_account = var.service_account
 }
