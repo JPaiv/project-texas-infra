@@ -16,28 +16,23 @@ terraform {
 #   region      = var.regionte
 # }
 
-provider "google-beta" {
-  credentials = "${file(var.credentials)}"
-  project     = var.project_id
-  region      = var.region
+# provider "google-beta" {
+#   credentials = "${file(var.credentials)}"
+#   project     = var.project_id
+#   region      = var.region
+# }
+
+module "vpc" {
+  source = ".modules/vpc"
+  region = var.region
+  project_id = var.project_id
+  environment = var.environment
 }
 
-# module "vpc" {
-#   source = ".modules/vpc"
-#   region = var.region
-#   project_id = var.project_id
-#   environment = var.environment
-# }
+module "gke" {
+  source = ".modules/gke"
+  region = var.region
+  project_id = var.project_id
 
-# module "gke" {
-#   source = ".modules/gke"
-#   region = var.region
-#   project_id = var.project_id
-
-#   depends_on = [module.vpc]
-# }
-resource "google_storage_bucket" "static-site" {
-  name          = "image-store-com-test"
-  location      = "EU"
-  force_destroy = true
+  depends_on = [module.vpc]
 }
