@@ -1,4 +1,4 @@
 variable "environment" {
   type        = string
-  description = "Staging environment in the pipeline"
+  description = "Prod or test, get from CI/CD pipeline env variable, don't give it manually."
 }
