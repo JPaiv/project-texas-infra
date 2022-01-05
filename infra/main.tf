@@ -29,7 +29,7 @@ terraform {
 # }
 
 module "registry" {
-  source          = "./modules/registry"
-  project_id      = var.project_id
-  service_account = var.service_account
+  source     = "./modules/registry"
+  project_id = var.project_id
+  # service_account = var.service_account
 }
