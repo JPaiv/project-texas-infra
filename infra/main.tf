@@ -29,6 +29,7 @@ terraform {
 # }
 
 module "registry" {
-  source      = "./modules/registry"
-  environment = var.environment
+  source          = "./modules/registry"
+  project_id      = var.project_id
+  service_account = var.service_account
 }
