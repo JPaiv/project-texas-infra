@@ -3,6 +3,9 @@ terraform {
     google = {
       source = "hashicorp/google"
     }
+    google-beta = {
+      source = "hashicorp/google-beta"
+    }
   }
   backend "gcs" {
     bucket = "tf-state-bucket-test-project-texas"
