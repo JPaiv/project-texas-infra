@@ -1,4 +1,4 @@
-resource "google_artifact_registry_repository" "my-repo" {
+resource "google_artifact_registry_repository" "artifact_repository" {
   provider = google-beta
 
   location      = "eu-central1"
