@@ -1,8 +1,4 @@
-variable "project_id" {
+variable "environment" {
   type        = string
-  description = "Project id of the service account."
-}
-
-variable "service_account" {
-  type = string
+  description = "Staging environment in the pipeline"
 }
