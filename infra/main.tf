@@ -35,6 +35,6 @@ module "registry" {
 
 module "cloud_run" {
   source      = "./modules/registry"
-  project_id  = var.project_id
+  region      = var.region
   environment = var.environment
 }

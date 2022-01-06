@@ -56,15 +56,19 @@ jobs:
         run: terraform apply -auto-approve
 
       - name: 'Configure gcloud doker'
+        working-directory: ./src
         run: gcloud auth configure-docker
 
       - name: 'Docker build'
+        working-directory: ./src
         run: docker build -t flask-api .
 
       - name: 'Tag image for container registry'
+        working-directory: ./src
         run: docker tag flask-api:latest eu.gcr.io/project-texas/flask-api
 
       - name: 'Push to container registry'
+        working-directory: ./src
         run: docker push eu.gcr.io/project-texas/flask-api
 
 
@@ -94,16 +98,16 @@ jobs:
   #       uses: 'google-github-actions/setup-gcloud@v0'
 
   #     - name: 'Use gcloud CLI'
-      #   run: 'gcloud info'
+  #       run: 'gcloud info'
 
-      # - name: 'Configure gcloud doker'
-      #   run: gcloud auth configure-docker
+  #     - name: 'Configure gcloud doker'
+  #       run: gcloud auth configure-docker
 
-      # - name: 'Docker build'
-      #   run: docker build -t flask-api .
+  #     - name: 'Docker build'
+  #       run: docker build -t flask-api .
 
-      # - name: 'Tag image for container registry'
-      #   run: docker tag flask-api:latest eu.gcr.io/project-texas/flask-api
+  #     - name: 'Tag image for container registry'
+  #       run: docker tag flask-api:latest eu.gcr.io/project-texas/flask-api
 
-      # - name: 'Push to container registry'
-      #   run: docker push eu.gcr.io/project-texas/flask-api
+  #     - name: 'Push to container registry'
+  #       run: docker push eu.gcr.io/project-texas/flask-api
