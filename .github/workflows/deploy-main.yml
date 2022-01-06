@@ -74,6 +74,15 @@ jobs:
         working-directory: ./src
         run: docker push eu.gcr.io/project-texas/flask-api
 
+      - id: get-gke-credentials
+        uses: google-github-actions/get-gke-credentials@v0.4.0
+        with:
+          cluster_name: test-project-texas-cluster
+          location: eu-central1-a
+
+      - id: get-pods
+        run: kubectl get pods
+
 
       # - name: Terraform destroy
       #   # if: github.ref == 'refs/heads/master' && github.event_name == 'push' 
