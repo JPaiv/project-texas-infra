@@ -31,5 +31,10 @@ module "gke" {
 module "registry" {
   source     = "./modules/registry"
   project_id = var.project_id
-  # service_account = var.service_account
+}
+
+module "cloud_run" {
+  source      = "./modules/registry"
+  project_id  = var.project_id
+  environment = var.environment
 }
