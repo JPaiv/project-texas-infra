@@ -83,19 +83,19 @@ jobs:
       # - id: get-pods
       #   run: kubectl get pods
 
-      - name: 'Apply deployment'
-        working-directory: ./kubernetes
-        run: kubectl create -f deployment.yaml
+      # - name: 'Apply deployment'
+      #   working-directory: ./kubernetes
+      #   run: kubectl create -f deployment.yaml
 
-      - name: 'Apply service'
-        working-directory: ./kubernetes
-        run: kubectl create -f service.yaml
+      # - name: 'Apply service'
+      #   working-directory: ./kubernetes
+      #   run: kubectl create -f service.yaml
       
-      - name: 'Apply ingress'
-        working-directory: ./kubernetes
-        run: kubectl create -f ingress.yaml
+      # - name: 'Apply ingress'
+      #   working-directory: ./kubernetes
+      #   run: kubectl create -f ingress.yaml
 
 
-      # - name: Terraform destroy
-      #   # if: github.ref == 'refs/heads/master' && github.event_name == 'push' 
-      #   run: terraform destroy -auto-approve
+      - name: Terraform destroy
+        # if: github.ref == 'refs/heads/master' && github.event_name == 'push' 
+        run: terraform destroy -auto-approve
