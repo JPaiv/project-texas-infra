@@ -1,21 +1,21 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: flask-api
+  name: flask-api-deployment
+  labels:
+    app: flask-api
 spec:
-    replicas: 1
-    selector:
+  replicas: 1
+  selector:
     matchLabels:
-        app: flask-api
-    template:
+      app: flask-api
+  template:
     metadata:
-        labels:
+      labels:
         app: flask-api
     spec:
-        containers:
-        - name: flask-api
-
+      containers:
+      - name: flask-api
         image: eu.gcr.io/project-texas/flask-api
-
         ports:
         - containerPort: 5000
