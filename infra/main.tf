@@ -34,7 +34,7 @@ module "registry" {
 }
 
 module "cloud_run" {
-  source      = "./modules/registry"
+  source      = "./modules/cloud_run"
   region      = var.region
   environment = var.environment
 }
