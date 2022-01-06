@@ -78,7 +78,7 @@ jobs:
         uses: google-github-actions/get-gke-credentials@v0.4.0
         with:
           cluster_name: test-project-texas-cluster
-          location: eu-central1-a
+          location: europe-west1
 
       - id: get-pods
         run: kubectl get pods
