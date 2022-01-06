@@ -1,4 +1,4 @@
-esource "google_cloud_run_service" "primary" {
+resource "google_cloud_run_service" "primary" {
   name     = "${var.environment}-project-texas-cloud-run"
   location = var.region
 
