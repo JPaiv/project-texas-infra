@@ -36,6 +36,9 @@ jobs:
 
       - name: 'Use gcloud CLI'
         run: 'gcloud info'
+      
+      - name: 'Unlock terraform state'
+        run: terraform force-unlock 1641432611844026
 
       - name: Terraform Init
         id: init
