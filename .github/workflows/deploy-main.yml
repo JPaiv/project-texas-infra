@@ -80,8 +80,17 @@ jobs:
           cluster_name: test-project-texas-cluster
           location: europe-west1
 
-      - id: get-pods
-        run: kubectl get pods
+      # - id: get-pods
+      #   run: kubectl get pods
+
+      - name: 'Apply deployment'
+        run: kubectl create -f ./kubernetes/deployment.yaml
+
+      - name: 'Apply service'
+        run: kubectl create -f ./kubernetes/service.yaml
+      
+      - name: 'Apply ingress'
+        run: kubectl create -f ./kubernetes/ingress.yaml
 
 
       # - name: Terraform destroy
