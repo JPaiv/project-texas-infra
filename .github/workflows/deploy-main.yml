@@ -85,7 +85,7 @@ jobs:
 
       - name: 'Apply deployment'
         working-directory: ./kubernetes
-        run: kubectl create -f /deployment.yaml
+        run: kubectl create -f deployment.yaml
 
       - name: 'Apply service'
         working-directory: ./kubernetes
