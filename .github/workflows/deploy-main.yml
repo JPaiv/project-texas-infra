@@ -84,51 +84,18 @@ jobs:
       #   run: kubectl get pods
 
       - name: 'Apply deployment'
-        run: kubectl create -f ./kubernetes/deployment.yaml
+        working-directory: ./kubernetes
+        run: kubectl create -f /deployment.yaml
 
       - name: 'Apply service'
-        run: kubectl create -f ./kubernetes/service.yaml
+        working-directory: ./kubernetes
+        run: kubectl create -f service.yaml
       
       - name: 'Apply ingress'
-        run: kubectl create -f ./kubernetes/ingress.yaml
+        working-directory: ./kubernetes
+        run: kubectl create -f ingress.yaml
 
 
       # - name: Terraform destroy
       #   # if: github.ref == 'refs/heads/master' && github.event_name == 'push' 
       #   run: terraform destroy -auto-approve
-
-
-  # build:
-  #   name: Build image
-  #   runs-on: ubuntu-latest
-  #   defaults:
-  #     run:
-  #       working-directory: ./src
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-
-  #     - id: 'auth'
-  #       name: 'Authenticate to Google Cloud'
-  #       uses: 'google-github-actions/auth@v0.4.0'
-  #       with:
-  #         workload_identity_provider: ${{ secrets.WORKLOAD_IDENTITY_PROVIDER }}
-  #         service_account: ${{ secrets.SERVICE_ACCOUNT }}
-
-  #     - name: 'Set up Cloud SDK'
-  #       uses: 'google-github-actions/setup-gcloud@v0'
-
-  #     - name: 'Use gcloud CLI'
-  #       run: 'gcloud info'
-
-  #     - name: 'Configure gcloud doker'
-  #       run: gcloud auth configure-docker
-
-  #     - name: 'Docker build'
-  #       run: docker build -t flask-api .
-
-  #     - name: 'Tag image for container registry'
-  #       run: docker tag flask-api:latest eu.gcr.io/project-texas/flask-api
-
-  #     - name: 'Push to container registry'
-  #       run: docker push eu.gcr.io/project-texas/flask-api
