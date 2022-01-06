@@ -41,8 +41,8 @@ jobs:
         id: init
         run: terraform init
 
-      - name: 'Unlock terraform state'
-        run: terraform force-unlock -force 1641432611844026
+      # - name: 'Unlock terraform state'
+      #   run: terraform force-unlock -force lock_id
           
       - name: Terraform Plan
         id: plan

@@ -6,7 +6,8 @@ resource "google_cloud_run_service" "primary" {
     spec {
       containers {
         image = "eu.gcr.io/project-texas/flask-api"
-        port {
+
+        ports {
           container_port = 5000
         }
       }
