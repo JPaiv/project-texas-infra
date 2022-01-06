@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: flask-api-ingress
+  annotations:
+spec:
+  rules:
+  - host: cloudkite.interview.com
+    http:
+      paths:
+      - path: /hello
+        pathType: Prefix
+        backend:
+          service:
+            name: flask-api-svc
+            port:
+              number: 5000
+      - path: /vowel-service
+        pathType: Prefix
+        backend:
+          service:
+            name: flask-api-svc
+            port:
+              number: 5000
