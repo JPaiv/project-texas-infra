@@ -42,7 +42,7 @@ jobs:
         run: terraform init
 
       - name: 'Unlock terraform state'
-        run: terraform force-unlock 1641432611844026
+        run: terraform force-unlock 1641432611844026 -auto-approve
           
       - name: Terraform Plan
         id: plan
