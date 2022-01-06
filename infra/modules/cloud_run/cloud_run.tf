@@ -5,7 +5,7 @@ resource "google_cloud_run_service" "primary" {
   template {
     spec {
       containers {
-        image = "eu.gcr.io/project-texas/flask-api:latest"
+        image = "eu.gcr.io/project-texas/flask-api"
       }
     }
   }
