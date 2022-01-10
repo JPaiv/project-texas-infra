@@ -28,11 +28,6 @@ module "gke" {
   subnet_name = module.vpc.subnet_id
 }
 
-module "registry" {
-  source     = "./modules/registry"
-  project_id = var.project_id
-}
-
 module "cloud_run" {
   source      = "./modules/cloud_run"
   region      = var.region
