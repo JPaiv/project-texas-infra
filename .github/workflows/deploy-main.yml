@@ -41,19 +41,16 @@ jobs:
         run: gcloud auth configure-docker
 
       - name: 'Docker build'
-        working-directory: ./src
         run: docker build -t flask-api .
 
       - name: 'Tag image for container registry'
-        working-directory: ./src
         run: docker tag flask-api:latest eu.gcr.io/project-texas/flask-api
 
       - name: 'Push to container registry'
-        working-directory: ./src
         run: docker push eu.gcr.io/project-texas/flask-api
 
   terraform:
-    name: "Terraform"
+    name: "Deploy terraform resources."
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -78,22 +75,6 @@ jobs:
 
       - name: 'Use gcloud CLI'
         run: 'gcloud info'
-
-      - name: 'Configure gcloud doker'
-        working-directory: ./src
-        run: gcloud auth configure-docker
-
-      # - name: 'Docker build'
-      #   working-directory: ./src
-      #   run: docker build -t flask-api .
-
-      # - name: 'Tag image for container registry'
-      #   working-directory: ./src
-      #   run: docker tag flask-api:latest eu.gcr.io/project-texas/flask-api
-
-      # - name: 'Push to container registry'
-      #   working-directory: ./src
-      #   run: docker push eu.gcr.io/project-texas/flask-api
 
       - name: Terraform Init
         id: init

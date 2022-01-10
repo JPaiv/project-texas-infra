@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: flask-api
-        image: eu.gcr.io/project-texas/flask-api
+        image: eu.gcr.io/project-texas/flask-api:latest
         ports:
         - containerPort: 5000

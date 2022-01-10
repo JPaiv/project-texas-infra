@@ -3,22 +3,22 @@ kind: Ingress
 metadata:
   name: flask-api-ingress
   annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: cloudkite.interview.com
-    http:
-      paths:
-      - path: /hello
-        pathType: Prefix
-        backend:
-          service:
-            name: flask-api-svc
-            port:
-              number: 5000
-      - path: /vowel-service
-        pathType: Prefix
-        backend:
-          service:
-            name: flask-api-svc
-            port:
-              number: 5000
+  - http:
+    paths:
+    - path: /hello
+      pathType: Prefix
+      backend:
+        service:
+          name: flask-api-svc
+          port:
+            number: 5000
+    - path: /vowel-service
+      pathType: Prefix
+      backend:
+        service:
+          name: flask-api-svc
+          port:
+            number: 5000
