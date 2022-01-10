@@ -95,30 +95,8 @@ jobs:
         run: exit 1
 
       - name: Terraform Apply
-        # if: github.ref == 'refs/heads/master' && github.event_name == 'push' 
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push' 
         run: terraform apply -auto-approve
 
-      - id: get-gke-credentials
-        uses: google-github-actions/get-gke-credentials@v0.4.0
-        with:
-          cluster_name: test-project-texas-cluster
-          location: europe-west1
-
-      # - id: get-pods
-      #   run: kubectl get pods
-
-      # - name: 'Apply deployment'
-      #   working-directory: ./kubernetes
-      #   run: kubectl create -f deployment.yaml
-
-      # - name: 'Apply service'
-      #   working-directory: ./kubernetes
-      #   run: kubectl create -f service.yaml
-      
-      # - name: 'Apply ingress'
-      #   working-directory: ./kubernetes
-      #   run: kubectl create -f ingress.yaml
-
-      # - name: Terraform destroy
-      #   # if: github.ref == 'refs/heads/master' && github.event_name == 'push' 
-      #   run: terraform destroy -auto-approve
+      - name: Terraform destroy 
+        run: terraform destroy -force
