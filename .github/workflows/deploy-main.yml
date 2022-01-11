@@ -37,7 +37,6 @@ jobs:
         run: 'gcloud info'
 
       - name: 'Configure gcloud doker'
-        working-directory: ./src
         run: gcloud auth configure-docker
 
       - name: 'Docker build'
@@ -98,6 +97,6 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push' 
         run: terraform apply -auto-approve
 
-      - name: Terraform destroy
-        # if: github.ref == 'refs/heads/master' && github.event_name == 'push' 
-        run: terraform destroy -auto-approve
+      # - name: Terraform destroy
+      #   # if: github.ref == 'refs/heads/master' && github.event_name == 'push' 
+      #   run: terraform destroy -auto-approve
