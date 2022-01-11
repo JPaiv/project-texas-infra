@@ -28,8 +28,8 @@ module "gke" {
   subnet_name = module.vpc.subnet_id
 }
 
-# module "cloud_run" {
-#   source      = "./modules/cloud_run"
-#   region      = var.region
-#   environment = var.environment
-# }
+module "cloud_run" {
+  source      = "./modules/cloud_run"
+  region      = var.region
+  environment = var.environment
+}
