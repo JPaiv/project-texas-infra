@@ -39,7 +39,7 @@ jobs:
       - name: 'Configure gcloud doker'
         run: gcloud auth configure-docker
 
-      - name: "Shot directory directory"
+      - name: "Show directory directory"
         run: "pwd"
 
       - name: 'Docker build'
@@ -79,6 +79,9 @@ jobs:
       - name: 'Use gcloud CLI'
         run: 'gcloud info'
 
+      - name: "Show directory directory"
+        run: "pwd"
+
       - name: Terraform Init
         id: init
         run: terraform init
@@ -111,7 +114,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./kubernetes
+        working-directory: kubernetes
     permissions:
       contents: 'read'
       id-token: 'write'
@@ -132,7 +135,7 @@ jobs:
       - name: 'Get kubectl config'
         run: 'gcloud container clusters get-credentials test-project-texas-cluster --region europe-west1'
 
-      - name: "Shot directory directory"
+      - name: "Show directory directory"
         run: "pwd"
 
       - name: 'Apply kubernetes config files.'
