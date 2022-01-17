@@ -49,8 +49,8 @@ jobs:
         run: docker push eu.gcr.io/project-texas/flask-api
 
   terraform:
-    name: "Deploy terraform resources."
     needs: application
+    name: "Deploy terraform resources."
     runs-on: ubuntu-latest
     defaults:
       run:
