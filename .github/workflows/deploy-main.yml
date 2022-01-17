@@ -39,6 +39,9 @@ jobs:
       - name: 'Configure gcloud doker'
         run: gcloud auth configure-docker
 
+      - name: "Shot directory directory"
+        run: "pwd"
+
       - name: 'Docker build'
         run: docker build -t flask-api .
 
@@ -106,9 +109,9 @@ jobs:
     name: "Deploy manage K8 cluster."
     needs: terraform
     runs-on: ubuntu-latest
-    # defaults:
-    #   run:
-    #     working-directory: ../kubernetes
+    defaults:
+      run:
+        working-directory: ./kubernetes
     permissions:
       contents: 'read'
       id-token: 'write'
@@ -129,10 +132,7 @@ jobs:
       - name: 'Get kubectl config'
         run: 'gcloud container clusters get-credentials test-project-texas-cluster --region europe-west1'
 
-      - name: "Back to root directory"
-        run: "cd"
-
-      - name: "Back to root directory"
+      - name: "Shot directory directory"
         run: "pwd"
 
       - name: 'Apply kubernetes config files.'
