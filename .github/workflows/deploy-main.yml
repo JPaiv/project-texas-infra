@@ -130,6 +130,9 @@ jobs:
         run: 'gcloud container clusters get-credentials test-project-texas-cluster --region europe-west1'
 
       - name: "Back to root directory"
+        run: "cd"
+
+      - name: "Back to root directory"
         run: "pwd"
 
       - name: 'Apply kubernetes config files.'
