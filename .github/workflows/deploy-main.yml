@@ -106,9 +106,9 @@ jobs:
     name: "Deploy manage K8 cluster."
     needs: terraform
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ../kubernetes
+    # defaults:
+    #   run:
+    #     working-directory: ../kubernetes
     permissions:
       contents: 'read'
       id-token: 'write'
