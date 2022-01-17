@@ -108,7 +108,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: kubernetes
+        working-directory: ../kubernetes
     permissions:
       contents: 'read'
       id-token: 'write'
