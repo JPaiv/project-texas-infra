@@ -133,5 +133,5 @@ jobs:
         run: "pwd"
 
       - name: 'Apply kubernetes config files.'
-        working_directory: ./kubernetes
+        working-directory: ./kubernetes
         run: 'kubectl apply -f *'
