@@ -148,6 +148,9 @@ jobs:
   #       working-directory: ./kubernetes
   #       run: 'kubectl apply -f *'
 
+      - name: "Echo workspace"
+        run: echo $GITHUB_WORKSPACE
+
       - run: |
-          chmod +x deployment.sh
-          deployment.sh
+          chmod +x "${GITHUB_WORKSPACE}/deployment.sh"
+          "${GITHUB_WORKSPACE}/deployment.sh"
