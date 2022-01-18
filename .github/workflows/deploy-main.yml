@@ -148,6 +148,6 @@ jobs:
   #       working-directory: ./kubernetes
   #       run: 'kubectl apply -f *'
 
-        - run: |
-            chmod +x ./deployment.sh
-            ./deployment.sh
+      - run: |
+          chmod +x ./deployment.sh
+          ./deployment.sh
