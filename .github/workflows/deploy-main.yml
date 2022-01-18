@@ -149,5 +149,5 @@ jobs:
   #       run: 'kubectl apply -f *'
 
       - run: |
-          chmod +x ./deployment.sh
-          ./deployment.sh
+          chmod +x deployment.sh
+          deployment.sh
