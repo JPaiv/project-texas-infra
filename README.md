@@ -22,13 +22,16 @@ In this task we use [GCP keyless authentication plugin for Github Actions](https
 
 Command 1:
 
+```
 gcloud iam workload-identity-pools create "<replace_with_your_pool_name>" \
   --project="${PROJECT_ID}" \ # Place the project ID in an env variable export = <project_id>
   --location="global" \
   --display-name="<replace_with_your_pool_display_name>"
+```
 
 Command 2:
 
+```
 gcloud iam workload-identity-pools providers create-oidc "<replace_with_your_provider_name>" \
   --project="${PROJECT_ID}" \ # Place the project ID in an env variable export = <project_id>
   --location="global" \
@@ -36,7 +39,7 @@ gcloud iam workload-identity-pools providers create-oidc "<replace_with_your_pro
   --display-name="Demo provider" \
   --attribute-mapping="google.subject=assertion.sub,attribute.actor=assertion.actor,attribute.aud=assertion.aud" \
   --issuer-uri="https://token.actions.githubusercontent.com"
-
+```
 
 Run those two commands in console after you have configured and gcloud init.
 
