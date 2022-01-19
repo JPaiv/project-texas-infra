@@ -144,6 +144,9 @@ jobs:
       - name: "Show directory directory"
         run: "pwd"
 
+      - name: "Run ls"
+        run: "ls"
+
   #     - name: 'Apply kubernetes config files.'
   #       working-directory: ./kubernetes
   #       run: 'kubectl apply -f *'
@@ -152,5 +155,5 @@ jobs:
         run: echo $GITHUB_WORKSPACE
 
       - run: |
-          chmod +x "${GITHUB_WORKSPACE}/kubernetes/deployment.sh"
+          chmod +x "./deployment.sh"
           "${GITHUB_WORKSPACE}/kubernetes/deployment.sh
