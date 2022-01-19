@@ -152,5 +152,5 @@ jobs:
         run: echo $GITHUB_WORKSPACE
 
       - run: |
-          chmod +x "${GITHUB_WORKSPACE}/deployment.sh"
-          "${GITHUB_WORKSPACE}/deployment.sh"
+          chmod +x "${GITHUB_WORKSPACE}/kubernetes/deployment.sh"
+          "${GITHUB_WORKSPACE}/kubernetes/deployment.sh
