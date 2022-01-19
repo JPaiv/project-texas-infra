@@ -155,5 +155,6 @@ jobs:
   #       run: 'kubectl apply -f *'
 
       - run: |
-          chmod +x deployment.sh
-          "${GITHUB_WORKSPACE}/kubernetes/deployment.sh
+          chmod +x "./deployment.sh"
+          # "${GITHUB_WORKSPACE}/kubernetes/deployment.sh"
+          "./deployment.sh"
