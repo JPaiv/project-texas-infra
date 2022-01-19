@@ -40,7 +40,7 @@ gcloud iam workload-identity-pools providers create-oidc "<replace_with_your_pro
 
 Run those two commands in console after you have configured and gcloud init.
 
-After this go to Github repo [Settings](readme_pictures/settings.png) -> [Secrets](readme_pictures/settings.png) and place service account and workload identity provider as secrets for the CI/CD pipeline.
+After this go to Github repo Settings) -> Secrets and place service account and workload identity provider as secrets for the CI/CD pipeline.
 
 After this the hard work part is over and you have an automatic pipeline ready to go!
 
