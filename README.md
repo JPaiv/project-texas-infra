@@ -1,8 +1,8 @@
-## project-texas-infra ##
+# project-texas-infra #
 Basic infrastrucsture for a GKE cluster with a VPC to run a python container with an endpoint.
 
 
-# How to use #
+## How to use ##
 First you need to configure basic access in the form of [keyless authentication](https://cloud.google.com/blog/products/identity-security/enable-keyless-access-to-gcp-with-workload-identity-federation).
 
 In traditional CI/CD pipeline model we have to worry about 2 things:
@@ -45,6 +45,6 @@ After this go to Github repo Settings) -> Secrets and place service account and 
 After this the hard work part is over and you have an automatic pipeline ready to go!
 
 
-# How to trigger builds #
+## How to trigger builds ##
 
 Just push the commits to the main branch. 
