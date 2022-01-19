@@ -144,17 +144,16 @@ jobs:
       - name: "Show directory directory"
         run: "pwd"
 
-      # - name: "Echo workspace"
-      #   run: echo $GITHUB_WORKSPACE
+      - name: "Echo workspace"
+        run: echo $GITHUB_WORKSPACE
 
       - name: "Run ls"
         run: "ls"
 
-  #     - name: 'Apply kubernetes config files.'
-  #       working-directory: ./kubernetes
-  #       run: 'kubectl apply -f *'
-
-      - run: |
+      - name: "Apply deployment, service and ingress files."
+        run: |
           chmod +x "./deployment.sh"
-          # "${GITHUB_WORKSPACE}/kubernetes/deployment.sh"
           "./deployment.sh"
+
+      - name: "Update deployment image."
+        run: kubectl rollout restart deployment flask-api-deployment
